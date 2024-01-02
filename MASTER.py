@@ -33,16 +33,17 @@ start_time=time.time()
 # Step 1: Define basin and number of years to run
 #==============================================================================
 #please set basin (EP,NA,NI,SI,SP,WP)
-basin='EP'
-loop=0 #ranges between 0 and 9 to simulate slices of 1000 years
+basin='WP'
+loop=10 #ranges between 0 and 9 to simulate slices of 1000 years
 
-total_years=1000 #set the total number of years you'd like to simulate
+total_years=100 #set the total number of years you'd like to simulate
 
 TC_data=[] #This list is composed of: [year,storm number,lat,lon,pressure,wind,rmax,category,Holland B parameter,precipitation,landfall flag]
 #==============================================================================
 #     Step 2: load grid with weighted genesis counts
 #==============================================================================
 for year in range(0,total_years):
+    print(year+1, "年目スタート")
     storms_per_year,genesis_month,lat0,lat1,lon0,lon1=Basins_WMO(basin) 
 
     if storms_per_year>0:

@@ -39,7 +39,7 @@ def Genesis_month(idx,storms):
     monthall : list of all genesis months.
 
     """
-    monthlist=np.load(os.path.join(__location__,'GENESIS_MONTHS.npy')).item()
+    monthlist=np.load(os.path.join(__location__,'GENESIS_MONTHS.npy'),allow_pickle=True).item()
     
     monthall=[]
     for i in range(0,storms):

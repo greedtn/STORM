@@ -270,7 +270,7 @@ def distance_from_coast(lon,lat,fpath,degree_in_km=111.12):
     if lon>180:
         lon=lon-360.
 
-    D = np.load(fpath,encoding = 'latin1').tolist()
+    D = np.load(fpath,encoding = 'latin1', allow_pickle=True).tolist()
 
     lons,lats = D['lons'],D['lats']
 
@@ -347,13 +347,13 @@ def TC_pressure(basin,latlist,lonlist,landfalllist,year,storms,monthlist,TC_data
     latidx_penv=np.linspace(90,-90,721)
     lonidx_penv=np.linspace(0,359.75,1440)    
     
-    JM_pressure=np.load(os.path.join(__location__,'COEFFICIENTS_JM_PRESSURE.npy')).item()
+    JM_pressure=np.load(os.path.join(__location__,'COEFFICIENTS_JM_PRESSURE_add_first_line.npy'),allow_pickle=True).item()
             
-    Genpres=np.load(os.path.join(__location__,'DP0_PRES_GENESIS.npy')).item()
+    Genpres=np.load(os.path.join(__location__,'DP0_PRES_GENESIS.npy'),allow_pickle=True).item()
             
-    WPR_coefficients=np.load(os.path.join(__location__,'COEFFICIENTS_WPR_PER_MONTH.npy')).item()
+    WPR_coefficients=np.load(os.path.join(__location__,'COEFFICIENTS_WPR_PER_MONTH.npy'),allow_pickle=True).item()
     
-    Genwind=np.load(os.path.join(__location__,'GENESIS_WIND.npy')).item()
+    Genwind=np.load(os.path.join(__location__,'GENESIS_WIND.npy'),allow_pickle=True).item()
 
     intlist=[5,3,2,5,5,5]
     
