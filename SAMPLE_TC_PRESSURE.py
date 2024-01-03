@@ -347,7 +347,7 @@ def TC_pressure(basin,latlist,lonlist,landfalllist,year,storms,monthlist,TC_data
     latidx_penv=np.linspace(90,-90,721)
     lonidx_penv=np.linspace(0,359.75,1440)    
     
-    JM_pressure=np.load(os.path.join(__location__,'COEFFICIENTS_JM_PRESSURE_add_first_line.npy'),allow_pickle=True).item()
+    JM_pressure=np.load('/Users/naoto/STORM-preprocessing/COEFFICIENTS_JM_PRESSURE_add_first_line_tsuda.npy',allow_pickle=True).item()
             
     Genpres=np.load(os.path.join(__location__,'DP0_PRES_GENESIS.npy'),allow_pickle=True).item()
             

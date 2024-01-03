@@ -61,4 +61,4 @@ for year in range(0,total_years):
 
 TC_data=np.array(TC_data)
 
-np.savetxt(os.path.join(__location__,'STORM_DATA_IBTRACS_'+str(basin)+'_'+str(total_years)+'_YEARS_'+str(loop)+'.txt'),TC_data,fmt='%5s',delimiter=',')
+np.savetxt(os.path.join(__location__,'STORM_DATA_IBTRACS_'+str(basin)+'_'+str(total_years)+'_YEARS_'+str(loop)+'_TSUDA.txt'),TC_data,fmt='%5s',delimiter=',')
